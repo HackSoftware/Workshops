@@ -4,7 +4,7 @@ The focus of the workshop is understanding concurrency in Python
 
 ## Agenda
 
-1. Global Interpreter Lock
+### 1. Global Interpreter Lock
 
 * Rule number one: You do not talk about the GIL.
 
@@ -16,12 +16,13 @@ The focus of the workshop is understanding concurrency in Python
 
 * More to come ...
 
-2. Threading & Multi-Processing
+### 2. Threading & Multi-Processing
+
 * [A Talk by Raymond Hetting, Python Core Developer](https://www.youtube.com/watch?v=Bv25Dwe84g0)
 
 * More to come ...
 
-3. Async? Await? Courutines? What?
+### 3. Async? Await? Courutines? What?
 
 * [Take A Savage Journey to the Heart of the Coroutine Dream with David Beazley](https://www.youtube.com/watch?v=E-1Y4kSsAFc)
 
