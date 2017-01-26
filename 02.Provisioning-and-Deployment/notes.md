@@ -1,13 +1,13 @@
 #### Start nginx:
 
 ```
-sudo start nginx start
+sudo service nginx start
 ```
 
 #### Restart nginx:
 
 ```
-sudo start nginx restart
+sudo service nginx restart
 ```
 
 ### Install postgresql
