@@ -4,32 +4,32 @@ The focus of the workshop is understanding concurrency in Python
 
 ## Agenda
 
-1. Global Interpreter Lock
-  * 1. You do not talk about the GIL.
+### 1. Global Interpreter Lock
 
-  * 2. You do not talk about the GIL.
+* Rule number one: You do not talk about the GIL.
 
-  * 3. What is GIL?
+* Rule number two: You do not talk about the GIL.
 
-   * [A talk by David Beazley](https://www.youtube.com/watch?v=Obt-vMVdM8s)
+* What is GIL?
 
-  * 4. More to come ...
+  * [A talk by David Beazley](https://www.youtube.com/watch?v=Obt-vMVdM8s)
 
-2. Threading & Multi-Processing
-  * [A Talk by Raymond Hetting, Python Core Developer](https://www.youtube.com/watch?v=Bv25Dwe84g0)
+* More to come ...
 
-  * More to come ...
+### 2. Threading & Multi-Processing
 
-  * How does DRF handle authentication and authorization?
+* [A Talk by Raymond Hetting, Python Core Developer](https://www.youtube.com/watch?v=Bv25Dwe84g0)
 
-3. Async? Await? Courutines? What?
+* More to come ...
 
-  * [Take A Savage Journey to the Heart of the Coroutine Dream with David Beazley](https://www.youtube.com/watch?v=E-1Y4kSsAFc)
+### 3. Async? Await? Courutines? What?
 
-  * More to come ...
+* [Take A Savage Journey to the Heart of the Coroutine Dream with David Beazley](https://www.youtube.com/watch?v=E-1Y4kSsAFc)
+
+* More to come ...
 
 ## Tasks
 
-  * Make the synchronous echo server asynchronous
+* Make the synchronous echo server asynchronous
 
-  * More to come ...
+* More to come ...
