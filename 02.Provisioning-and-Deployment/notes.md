@@ -1,39 +1,28 @@
-#### Start nginx:
+## Pre install some dependencies:
+```
+sudo apt-get install python-virtualenv
+```
+
+## nginx:
+
+Install nginx:
 
 ```
+sudo apt-get install nginx
 sudo service nginx start
 ```
 
-#### Restart nginx:
+## Install postgresql
 
 ```
-sudo service nginx restart
-```
-
-### Install postgresql
-
-#### Create cluster before starting postgres:
-
-```
+sudo apt-get install postgresql postgresql-server-dev-9.3
 sudo pg_createcluster 9.3 main
+sudo service postgresql start
 ```
-
-#### If `pg_createcluster` fails do the following:
+If `pg_createcluster` fails do the following:
 
 ```
 export LC_ALL="en_US.UTF-8"
-```
-
-#### Actually instal postgresql:
-
-```
-sudo apt-get install postgresql
-```
-
-#### Start postgres
-
-```
-sudo service postgresql start
 ```
 
 ## Create `user` that will execute the python code
@@ -42,137 +31,45 @@ sudo service postgresql start
 adduser hack
 ```
 
-#### Switch from root to hack:
-
+### Add your keys to the hack usre
 ```
 su hack
-```
-
-#### Go to `/home/hack`
-
-```
+cd /home/hack
 mkdir .shh
-```
-
-#### Only hack can write and read there
-
-```
-chmod 700 ~/.ssh
-```
-
-#### Paste your `id_rsa.pub` in `authorized_keys`:
-
-```
-vi authorized_keys -> <paste public key in here>
-```
-
-```
+chmod 700 ~/.ssh # Only hack can write and read there
+cd .ssh
+vi authorized_keys # Paste public key in here
 chmod 600 authorized_keys
 ```
-
-#### What rights mean:
--------------------------
-user | group | all
- 100 |  010  | 001
-
-4 - r
-2 - w
-1 - e
--------------------------
+More information about the permissions in linux https://wiki.archlinux.org/index.php/File_permissions_and_attributes
 
 ## Create folder for the project & virtual environment
 
-#### ssh as root & create the main folder:
-
 ```
 mkdir hack
-```
-
-#### Give ownership to the hack user:
-
-```
-chown hack:hack -R hack/
+chown hack:hack -R hack/ # Give ownership to the hack user
 ```
 
 **Important** Do everything esle as the hack user
 
 ```
+./install_os_dependencies.sh install # **Important note** Install os requirements as `root this will install all the required os dependences
 su hack
-```
-
-#### Go to the hack directory
-
-```
 cd /hack
-```
-
-#### Create project folder
-
-```
 mkdir hack33
-```
-
-#### create virtualenv
-
-**Important none** Do this as root!
-
-```
-sudo apt-get install python-virtualenv
-```
-
-### Switch to hack & create `env` folder inside `hack33` folder:
-
-#### Create `env` folder:
-
-```
+cd hack33
 virtualenv -p /usr/bin/python3 env
-```
-
-#### Source in the virtual environment:
-
-```
 source env/bin/activate
-```
-#### Create project's folder:
-
-```
-mkdir current  
-```
-
-```
+mkdir current # Create project's folder
 cd current
-```
-
-#### Clone your project:
-
-```
-git clone https://github.com/pgergov/hack33.git .  
-```
-
-## Install requirements
-
-```
-sudo apt-get install postgresql-server-dev-9.3
-```
-
-**Important note** Install os requirements as `root`:
-
-```
-./install_os_dependencies.sh install
-```
-
-#### Be sure to be sourced in the environment before installing python requirements:
-
-```
+git clone https://github.com/pgergov/hack33.git .
 pip install -r requirements/production.txt
 ```
 
 ## Set env variables
 
-#### Paste your environments here:
-
 ```
-vi /etc/environment  
+vi /etc/environment  # Paste your environments here
 ```
 
 ## Create postgres user & db
@@ -181,9 +78,6 @@ vi /etc/environment
 
 ```
 sudo -u postgres createuser hack
-```
-
-```
 sudo -u postgres createdb -O hack hack33
 ```
 
@@ -215,17 +109,7 @@ gunicorn config.wsgi:application
 
 ```
 cd /etc/init/
-```
-
-#### Define your gunicorn upstart job there
-
-```
-vi hack33.conf  
-```
-
-#### Start the upstart job
-
-```
+vi hack33.conf # paste the upstart config from the repo  
 start hack33
 ```
 
@@ -234,22 +118,7 @@ start hack33
 **Important note** Run the following commands as `root`
 ```
 cd /etc/nginx/sites-enabled
-```
-
-#### Delete the default nginx file:
-
-```
-rm default  
-```
-
-#### Define your nginx configuration here:
-
-```
-vi hack33
-```
-
-#### Restart nginx
-
-```
+rm default
+vi hack33 # paste the nginx config from this repo
 sudo service nginx restart
 ```
