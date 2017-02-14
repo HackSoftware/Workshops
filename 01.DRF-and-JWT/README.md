@@ -16,4 +16,9 @@ As the headline says, the focus of the workshop is understanding some key concep
 ## Materials
 
 * [DRF Github](https://github.com/tomchristie/django-rest-framework)
+* [JWT Spec](https://jwt.io/)
 * [DRF JWT Auth](https://github.com/GetBlimp/django-rest-framework-jwt)
+
+## Problems
+
+* Implement a simple serializer class, similar to that in DRF.
