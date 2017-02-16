@@ -4,13 +4,30 @@ As the headline says, the focus of the workshop is understanding some key concep
 
 ## Agenda
 
+### Serializers
+
 1. Looking at the code of Django Rest Framework
   * `APIView` & `generic.*`
   * `Serializer`, `ReturnDict` and modifying `serializer.data`
-2. Understanding concepts for authentication and authorization
-  * How does DRF handle authentication and authorization?
-3. API authentication & JWT
-  * What's the need for JWT?
+
+### DRF Authentication & Authorization
+
+1. What is authentication / authorization / permissions in Django?
+2. Lifecycle of `APIView`. Looking at `rest_framework/views.py`
+3. Handling authentication
+  * Looking at `rest_framework/authentication.py`
+  * Looking at `rest_framework/request.py`
+3. Handling permissions
+  * Looking at `rest_framework/permissions.py`
+4. How everything fits together?
+5. Making custom authentication
+
+
+### JWT
+
+1. What's the idea behind JWT?
+2. JWT Authentication backend
+3. JWT Views for obtaiking tokens
   * Looking at [DRF JWT Auth](https://github.com/GetBlimp/django-rest-framework-jwt)
 
 ## Materials
@@ -23,6 +40,7 @@ As the headline says, the focus of the workshop is understanding some key concep
 ## Problems
 
 * Implement a simple serializer class, similar to that in DRF.
+* Implement a custom authentication backend.
 
 
 ## Authentication / Authorization
