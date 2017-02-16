@@ -18,7 +18,15 @@ As the headline says, the focus of the workshop is understanding some key concep
 * [DRF Github](https://github.com/tomchristie/django-rest-framework)
 * [JWT Spec](https://jwt.io/)
 * [DRF JWT Auth](https://github.com/GetBlimp/django-rest-framework-jwt)
+* [DRF Authentication](http://www.django-rest-framework.org/api-guide/authentication/#authentication)
 
 ## Problems
 
 * Implement a simple serializer class, similar to that in DRF.
+
+
+## Authentication / Authorization
+
+1. First authentication is made by calling `request.user`
+  - This will either fail as an authentication or pass to anonymous user
+  - We can add additional permission check for `IsAuthenticated`
