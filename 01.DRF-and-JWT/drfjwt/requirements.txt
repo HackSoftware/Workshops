@@ -2,6 +2,7 @@ appdirs==1.4.0
 decorator==4.0.11
 Django==1.10.5
 djangorestframework==3.5.4
+djangorestframework-jwt==1.9.0
 ipdb==0.10.2
 ipython==5.2.2
 ipython-genutils==0.1.0
@@ -12,6 +13,7 @@ pkg-resources==0.0.0
 prompt-toolkit==1.0.13
 ptyprocess==0.5.1
 Pygments==2.2.0
+PyJWT==1.4.2
 pyparsing==2.1.10
 simplegeneric==0.8.1
 six==1.10.0
